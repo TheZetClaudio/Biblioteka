@@ -97,6 +97,20 @@ namespace BibList.Controllers
             return View(Users);
         }
 
+        public ActionResult UserlistCreate()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserlistCreate(Userlist user)
+        {
+            user.Id = Users.Count + 1;
+            Users.Add(user);
+            return RedirectToAction();
+        }
+
         public ActionResult UserlistEdit(int id)
         {
             return View(Users.FirstOrDefault(x=>x.Id==id));
@@ -111,6 +125,18 @@ namespace BibList.Controllers
             user1.Surename= user.Surename;
             user1.BorrowedId= user.BorrowedId;
           
+            return RedirectToAction();
+        }
+        public ActionResult UserlisDelete(int id)
+        {
+            return View(Users.FirstOrDefault(x => x.Id == id));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult UserlisDelete(int id, IFormCollection collection)
+        {
+            Users.Remove(Users.FirstOrDefault(x=>x.Id==id));
             return RedirectToAction();
         }
     }

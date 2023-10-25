@@ -2,15 +2,45 @@
 @{
 	ViewData["Title"] = "Strona Główna";
 }
-<h1>Strona główna</h1> 
+<h1>Hejka Developerze</h1>
+
+<h2>Otrzymałeś właśnie Możliwość Modyfikowanie Biblioteki :D</h2>
+<br />
+
+<p>Zgodnie z danymi od z góry dostajesz Uprawnienia do Wszelkich modyfikacji naszej biblioteki.</p>
+<p>Dostajesz więc dostęp do możliwości Edycji danych o książkach oraz zarejesrowanych użytkownikach.</p>
+<p>Tylko proszę nic nie zapsuj ;-;</p>
+<br />
+<p>
+	Przygotowaliśmy dla ciebie aplikację która pozwoli ci w prasty sposób manipulowac danymi
+	Niżej znajdziesz odnośniki do List
+</p>
+
+<p>
+	<a asp-action="Booklist" class="Link">Book List</a> | 
+	<a asp-action="Userlist" class="Link">Users List</a>
+</p>
+<p>PS: Tak chciało mi sie to pisać... polcam zostawić "Chce Ciasteczko" w Komentarzu </p>
 <style>
-	h1{
-		display:flex; 
-		justify-content:center; 
-		align-items:center;
+	h1 {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	h2{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	p{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 18px;
+	}
+	.Link{
+		color:red;
+		font-size: 2rem;
+		margin:10px;
 	}
 </style>
-<p>
-	<a asp-action="Booklist">See List</a> | 
-	<a asp-action="Userlist">Users List</a>
-</p>

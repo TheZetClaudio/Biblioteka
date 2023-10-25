@@ -1,0 +1,50 @@
+﻿@model BibList.Models.Userlist
+
+@{
+    ViewData["Title"] = "UserlisDelete";
+}
+
+<h1>UserlisDelete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Userlist</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PESEL)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PESEL)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Surename)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Surename)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BorrowedId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BorrowedId)
+        </dd>
+    </dl>
+    
+    <form asp-action="UserlisDelete">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Userlist">Back to List</a>
+    </form>
+</div>

@@ -7,14 +7,12 @@
 <h1>Userlist</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="UserlistCreate">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.PESEL)
             </th>
@@ -33,9 +31,7 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <th>
-                    @Html.DisplayNameFor(modelItem => item.Id)
-            </th>
+
             <td>
                 @Html.DisplayFor(modelItem => item.PESEL)
             </td>
@@ -50,10 +46,26 @@
             </td>
             <td>
                     @Html.ActionLink("Edit", "UserlistEdit", new {  id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+
+                    @Html.ActionLink("Delete", "UserlisDelete", new { id=item.Id })
             </td>
         </tr>
 }
     </tbody>
 </table>
+<style>
+    thead {
+        border-bottom: solid 2px;
+    }
+
+    th {
+        border-right: solid 2px;
+        border-left: solid 2px;
+    }
+
+    td {
+        border-right: solid 2px;
+        border-left: solid 2px;
+        border-bottom: solid 1px;
+    }
+</style>
